@@ -20,3 +20,7 @@ class TestStringCalculator(unittest.TestCase):
 
     def test_number_is_unknown_digit_number(self):
         self.assertEqual(self.obj.add("1,2,3"), 6)
+
+    def test_number_has_alphabets(self):
+        self.assertEqual(self.obj.add("1,2,a,c"), 7)
+        self.assertEqual(self.obj.add("z,1,26,a"), 54)
