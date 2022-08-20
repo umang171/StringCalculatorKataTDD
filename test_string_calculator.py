@@ -43,3 +43,9 @@ class TestStringCalculator(unittest.TestCase):
     def test_number_with_different_delimiter(self):
         self.assertEqual(self.obj.add("//;1;2;3"), 6)
         self.assertEqual(self.obj.add("//;\n1;2"), 3)
+
+    def test_number_with_odd_even_sum(self):
+        self.assertEqual(self.obj.add("0//3,2,5"), 8)
+        self.assertEqual(self.obj.add("0//1,2,3"), 4)
+        self.assertEqual(self.obj.add("1//3,2,5"), 2)
+        self.assertEqual(self.obj.add("1//1,1,2,3"), 4)

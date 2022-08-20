@@ -10,6 +10,26 @@ class StringCalculator:
             if(int(numbers) < 0):
                 raise ValueError("Negative not allowed:", numbers)
             return int(numbers)
+        elif(numbers.startswith("0//")):
+            i = 0
+            sum = 0
+            numbers = numbers[3:]
+            numbers = numbers.split(",")
+            for ele in numbers:
+                if(i % 2 == 0):
+                    sum += int(ele)
+                i += 1
+            return sum
+        elif(numbers.startswith("1//")):
+            i = 0
+            sum = 0
+            numbers = numbers[3:]
+            numbers = numbers.split(",")
+            for ele in numbers:
+                if(i % 2 != 0):
+                    sum += int(ele)
+                i += 1
+            return sum
         else:
             sum = 0
             if(numbers.count("\n") != 0):
