@@ -17,3 +17,6 @@ class TestStringCalculator(unittest.TestCase):
     def test_number_is_two_digit(self):
         self.assertEqual(self.obj.add("1,2"), 3)
         self.assertEqual(self.obj.add("13,7"), 20)
+
+    def test_number_is_unknown_digit_number(self):
+        self.assertEqual(self.obj.add("1,2,3"), 6)
