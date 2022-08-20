@@ -1,12 +1,16 @@
 class StringCalculator:
     def add(self, numbers):
+        if(numbers.startswith("//")):
+            delimiter = numbers[2]
+            numbers = numbers[3:]
+            numbers = numbers.replace(delimiter, ",")
         if(len(numbers.strip()) == 0):
             return 0
         elif(numbers.strip().count(",") < 1):
             if(int(numbers) < 0):
                 raise ValueError("Negative not allowed:", numbers)
             return int(numbers)
-        elif(numbers.strip().count(",") >= 1):
+        else:
             sum = 0
             if(numbers.count("\n") != 0):
                 numbers = numbers.replace("\n", ",")
