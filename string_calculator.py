@@ -2,7 +2,9 @@ class StringCalculator:
     def add(self, numbers):
         if(len(numbers.strip()) == 0):
             return 0
-        elif(len(numbers.strip()) == 1):
+        elif(numbers.strip().count(",") < 1):
+            if(int(numbers) < 0):
+                raise ValueError("Negative value passed:")
             return int(numbers)
         elif(numbers.strip().count(",") >= 1):
             sum = 0

@@ -24,3 +24,6 @@ class TestStringCalculator(unittest.TestCase):
     def test_number_has_alphabets(self):
         self.assertEqual(self.obj.add("1,2,a,c"), 7)
         self.assertEqual(self.obj.add("z,1,26,a"), 54)
+
+    def test_number_has_negative_digit(self):
+        self.assertRaises(ValueError, self.obj.add, "-1")
