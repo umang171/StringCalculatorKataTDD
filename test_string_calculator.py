@@ -27,3 +27,7 @@ class TestStringCalculator(unittest.TestCase):
 
     def test_number_has_negative_digit(self):
         self.assertRaises(ValueError, self.obj.add, "-1")
+        self.assertRaises(ValueError, self.obj.add, "-21")
+
+    def test_number_has_multiple_negative_digits(self):
+        self.assertRaises(ValueError, self.obj.add, "-1,-2,-3")
