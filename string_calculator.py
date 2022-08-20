@@ -1,11 +1,28 @@
 class StringCalculator:
     def add(self, numbers):
         if(numbers.startswith("//")):
-            delimiter = numbers[2]
-            numbers = numbers[3:]
+            # For multiple length of delimiter
+            if(numbers[2] == "["):
+                delimiter = ""
+                i = 3
+                for ele in numbers[3:]:
+                    i += 1
+                    if(ele == "]"):
+                        break
+                    else:
+                        delimiter += ele
+                print(delimiter)
+            # For different types of delimiter
+            else:
+                delimiter = numbers[2]
+                i = 3
+            numbers = numbers[i:]
             numbers = numbers.replace(delimiter, ",")
+            print(numbers)
+        # Empty String
         if(len(numbers.strip()) == 0):
             return 0
+        # String with one number
         elif(numbers.strip().count(",") < 1):
             if(int(numbers) < 0):
                 raise ValueError("Negative not allowed:", numbers)
@@ -30,6 +47,7 @@ class StringCalculator:
                     sum += int(ele)
                 i += 1
             return sum
+        # String with multiple digit number
         else:
             sum = 0
             if(numbers.count("\n") != 0):

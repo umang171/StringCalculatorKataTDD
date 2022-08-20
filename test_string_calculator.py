@@ -49,3 +49,6 @@ class TestStringCalculator(unittest.TestCase):
         self.assertEqual(self.obj.add("0//1,2,3"), 4)
         self.assertEqual(self.obj.add("1//3,2,5"), 2)
         self.assertEqual(self.obj.add("1//1,1,2,3"), 4)
+
+    def test_number_with_multiple_length_delimiter(self):
+        self.assertEqual(self.obj.add("//[***]1***2***3"), 6)
