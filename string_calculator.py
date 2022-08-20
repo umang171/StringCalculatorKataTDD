@@ -16,7 +16,8 @@ class StringCalculator:
                 elif(not number.isdigit()):
                     sum += (ord(number)-96)
                 else:
-                    sum += int(number)
+                    if(not int(number) > 1000):
+                        sum += int(number)
             if(len(negative_values) != 0):
                 raise ValueError("Negatives not allowed", negative_values)
             return sum

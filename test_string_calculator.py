@@ -31,3 +31,7 @@ class TestStringCalculator(unittest.TestCase):
 
     def test_number_has_multiple_negative_digits(self):
         self.assertRaises(ValueError, self.obj.add, "-1,-2,-3")
+
+    def test_number_is_bigger_than_thousand(self):
+        self.assertEqual(self.obj.add("10000,2,3"), 5)
+        self.assertEqual(self.obj.add("300,1001,1,2000"), 301)
