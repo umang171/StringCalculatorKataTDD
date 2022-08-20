@@ -35,3 +35,6 @@ class TestStringCalculator(unittest.TestCase):
     def test_number_is_bigger_than_thousand(self):
         self.assertEqual(self.obj.add("10000,2,3"), 5)
         self.assertEqual(self.obj.add("300,1001,1,2000"), 301)
+
+    def test_number_with_new_lines(self):
+        self.assertEqual(self.obj.add("1\n,2,3"), 6)

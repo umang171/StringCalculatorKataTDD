@@ -8,13 +8,16 @@ class StringCalculator:
             return int(numbers)
         elif(numbers.strip().count(",") >= 1):
             sum = 0
+            if(numbers.count("\n") != 0):
+                numbers = numbers.replace("\n", ",")
             numberlist = numbers.strip().split(",")
             negative_values = []
             for number in numberlist:
                 if(len(number) >= 2 and int(number) < 0):
                     negative_values.append(number)
                 elif(not number.isdigit()):
-                    sum += (ord(number)-96)
+                    if(not number.strip() == ""):
+                        sum += (ord(number)-96)
                 else:
                     if(not int(number) > 1000):
                         sum += int(number)
