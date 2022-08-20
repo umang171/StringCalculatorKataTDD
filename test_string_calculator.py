@@ -8,3 +8,8 @@ class TestStringCalculator(unittest.TestCase):
 
     def test_string_is_empty(self):
         self.assertEqual(self.obj.add(" "), 0)
+        self.assertEqual(self.obj.add(""), 0)
+
+    def test_number_is_one_digit(self):
+        self.assertEqual(self.obj.add("1"), 1)
+        self.assertEqual(self.obj.add("3"), 3)
