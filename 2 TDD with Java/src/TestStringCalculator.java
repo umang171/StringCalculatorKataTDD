@@ -34,8 +34,13 @@ public class TestStringCalculator {
 
     @Test
     public void testStringHasNegativeNumber() {
-        // assertEquals("Negative not allowed", StringCalculator.add("-5"));
         Exception e = assertThrows(Exception.class, () -> StringCalculator.add("-1"));
-        assertEquals(e.getMessage(), "Negative not allowed:-1");
+        assertEquals("Negative not allowed:-1", e.getMessage());
+    }
+
+    @Test
+    public void testStringHasMultipleNegativeNumber() {
+        Exception e = assertThrows(Exception.class, () -> StringCalculator.add("-1,3,-4,-2"));
+        assertEquals("Negative not allowed:-1,-4,-2,", e.getMessage());
     }
 }
