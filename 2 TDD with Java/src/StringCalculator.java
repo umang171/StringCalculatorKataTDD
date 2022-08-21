@@ -3,6 +3,13 @@ package src;
 public class StringCalculator {
     public static int add(String numbers) {
         String negativeValues = "";
+        if (numbers.startsWith("//")) {
+            int beginIndexOfParameter = numbers.indexOf("//");
+            int endIndexOfParameter = numbers.indexOf("\n");
+            String delimiter = numbers.substring(beginIndexOfParameter + 2, endIndexOfParameter);
+            numbers = numbers.substring(endIndexOfParameter + 1);
+            numbers = numbers.replaceAll(delimiter, ",");
+        }
         if (numbers.strip().length() == 0) {
             return 0;
         } else if (!numbers.contains(",")) {
@@ -18,8 +25,8 @@ public class StringCalculator {
             int sum = 0;
             for (String number : numberList) {
                 if ((number.length() == 1) && (!Character.isDigit(number.charAt(0)))) {
-                    int characer = number.charAt(0);
-                    sum += (characer - 96);
+                    int character = number.charAt(0);
+                    sum += (character - 96);
                 } else {
                     if (Integer.parseInt(number) < 0) {
                         negativeValues += (number + ",");

@@ -50,7 +50,12 @@ public class TestStringCalculator {
     }
 
     @Test
-    public void testNumberWithDifferentDelimeter() {
+    public void testNumberWithDifferentDelimiterNewLine() {
         assertEquals(6, StringCalculator.add("1\n2,3"));
+    }
+
+    @Test
+    public void testNumberWithDifferentDelimiter() {
+        assertEquals(6, StringCalculator.add("//;\n1;2;3"));
     }
 }
