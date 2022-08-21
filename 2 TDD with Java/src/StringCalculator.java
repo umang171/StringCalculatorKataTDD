@@ -5,8 +5,10 @@ public class StringCalculator {
         String negativeValues = "";
         if (numbers.startsWith("0//") || (numbers.startsWith("1//"))) {
             int index;
+            // For even number of indices
             if (numbers.startsWith("1//")) {
                 index = 0;
+                // For odd number of indices
             } else {
                 index = 1;
             }
@@ -18,6 +20,7 @@ public class StringCalculator {
             }
             return sum;
         }
+        // Different delimiter
         if (numbers.startsWith("//")) {
             int beginIndexOfParameter = numbers.indexOf("//");
             int endIndexOfParameter = numbers.indexOf("\n");
@@ -58,6 +61,5 @@ public class StringCalculator {
             return sum;
         }
         return 1;
-
     }
 }
