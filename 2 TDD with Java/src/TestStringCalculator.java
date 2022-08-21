@@ -61,11 +61,16 @@ public class TestStringCalculator {
 
     @Test
     public void testNumberWithOddIndicesSum() {
-        assertEquals(6, StringCalculator.add("0//2,1,4,3"));
+        assertEquals(4, StringCalculator.add("0//2,1,4,3"));
     }
 
     @Test
     public void testNumberWithEvenIndicesSum() {
-        assertEquals(6, StringCalculator.add("1//1,2,3,4"));
+        assertEquals(6, StringCalculator.add("1//1,2,5,3"));
+    }
+
+    @Test
+    public void testNumberWithMulitpleLengthDelimiter() {
+        assertEquals(6, StringCalculator.add("//;;;\n1;;;2;;;3"));
     }
 }

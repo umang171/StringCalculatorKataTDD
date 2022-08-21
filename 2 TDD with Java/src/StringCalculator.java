@@ -5,7 +5,7 @@ public class StringCalculator {
         String negativeValues = "";
         if (numbers.startsWith("0//") || (numbers.startsWith("1//"))) {
             int index;
-            if (numbers.startsWith("0//")) {
+            if (numbers.startsWith("1//")) {
                 index = 0;
             } else {
                 index = 1;
