@@ -9,4 +9,10 @@ public class TestStringCalculator {
     public void testNumberIsEmptySpace() {
         assertEquals(0, StringCalculator.add(" "));
     }
+
+    @Test
+    public void testNumberIsOfOneDigit() {
+        assertEquals(2, StringCalculator.add("2"));
+        assertEquals(30, StringCalculator.add("30"));
+    }
 }
