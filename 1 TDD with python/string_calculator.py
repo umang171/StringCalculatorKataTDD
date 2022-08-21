@@ -4,6 +4,7 @@ class StringCalculator:
             # For multiple length of delimiter
             if(numbers[2] == "["):
                 delimiter = ""
+                # delimiter index starts from here
                 i = 3
                 for ele in numbers[3:]:
                     i += 1
@@ -11,14 +12,12 @@ class StringCalculator:
                         break
                     else:
                         delimiter += ele
-                print(delimiter)
             # For different types of delimiter
             else:
                 delimiter = numbers[2]
                 i = 3
             numbers = numbers[i:]
             numbers = numbers.replace(delimiter, ",")
-            print(numbers)
         # Empty String
         if(len(numbers.strip()) == 0):
             return 0
@@ -27,23 +26,16 @@ class StringCalculator:
             if(int(numbers) < 0):
                 raise ValueError("Negative not allowed:", numbers)
             return int(numbers)
-        elif(numbers.startswith("0//")):
-            i = 0
-            sum = 0
+        elif(numbers.startswith("0//") or (numbers.startswith("1//"))):
+            if(numbers.startswith("0")):
+                i = 0
+            else:
+                i = 1
             numbers = numbers[3:]
             numbers = numbers.split(",")
+            sum = 0
             for ele in numbers:
                 if(i % 2 == 0):
-                    sum += int(ele)
-                i += 1
-            return sum
-        elif(numbers.startswith("1//")):
-            i = 0
-            sum = 0
-            numbers = numbers[3:]
-            numbers = numbers.split(",")
-            for ele in numbers:
-                if(i % 2 != 0):
                     sum += int(ele)
                 i += 1
             return sum
