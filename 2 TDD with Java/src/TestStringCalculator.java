@@ -48,4 +48,9 @@ public class TestStringCalculator {
     public void testStringNumberIsBiggerThanThousand() {
         assertEquals(5, StringCalculator.add("1,2001,3,1001,1"));
     }
+
+    @Test
+    public void testNumberWithDifferentDelimeter() {
+        assertEquals(6, StringCalculator.add("1\n2,3"));
+    }
 }

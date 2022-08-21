@@ -11,6 +11,9 @@ public class StringCalculator {
             }
             return Integer.parseInt(numbers);
         } else if (numbers.contains(",")) {
+            if (numbers.contains("\n")) {
+                numbers = numbers.replace("\n", ",");
+            }
             String numberList[] = numbers.split(",");
             int sum = 0;
             for (String number : numberList) {
