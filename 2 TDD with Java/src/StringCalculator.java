@@ -10,7 +10,12 @@ public class StringCalculator {
             String numberList[] = numbers.split(",");
             int sum = 0;
             for (String number : numberList) {
-                sum += Integer.parseInt(number);
+                if (!Character.isDigit(number.charAt(0))) {
+                    int characer = number.charAt(0);
+                    sum += characer - 96;
+                } else {
+                    sum += Integer.parseInt(number);
+                }
             }
             return sum;
         }

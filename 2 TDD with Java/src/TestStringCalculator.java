@@ -24,4 +24,10 @@ public class TestStringCalculator {
     public void testStringHasUnknownNumbers() {
         assertEquals(6, StringCalculator.add("1,2,3"));
     }
+
+    @Test
+    public void testStringHasAlphabets() {
+        assertEquals(6, StringCalculator.add("a,b,c"));
+        assertEquals(10, StringCalculator.add("1,a,b,2,c,1"));
+    }
 }
