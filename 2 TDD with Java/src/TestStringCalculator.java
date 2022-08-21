@@ -11,8 +11,12 @@ public class TestStringCalculator {
     }
 
     @Test
-    public void testNumberIsOfOneDigit() {
+    public void testStringHasOneNumber() {
         assertEquals(2, StringCalculator.add("2"));
-        assertEquals(30, StringCalculator.add("30"));
+    }
+
+    @Test
+    public void testStringHasTwoNumber() {
+        assertEquals(3, StringCalculator.add("1,2"));
     }
 }
