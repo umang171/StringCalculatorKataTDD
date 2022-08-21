@@ -61,7 +61,11 @@ public class TestStringCalculator {
 
     @Test
     public void testNumberWithOddIndicesSum() {
-        assertEquals(4, StringCalculator.add("0//1,2,3"));
-        assertEquals(7, StringCalculator.add("0//4,2,3"));
+        assertEquals(6, StringCalculator.add("0//2,1,4,3"));
+    }
+
+    @Test
+    public void testNumberWithEvenIndicesSum() {
+        assertEquals(6, StringCalculator.add("1//1,2,3,4"));
     }
 }
