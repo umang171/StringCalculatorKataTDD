@@ -5,6 +5,9 @@ public class StringCalculator {
         if (numbers.strip().length() == 0) {
             return 0;
         } else if (!numbers.contains(",")) {
+            if (Integer.parseInt(numbers) < 0) {
+                throw new RuntimeException("Negative not allowed:" + numbers);
+            }
             return Integer.parseInt(numbers);
         } else if (numbers.contains(",")) {
             String numberList[] = numbers.split(",");
