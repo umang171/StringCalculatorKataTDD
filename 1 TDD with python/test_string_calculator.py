@@ -14,22 +14,22 @@ class TestStringCalculator(unittest.TestCase):
         self.assertEqual(self.obj.add("1"), 1)
         self.assertEqual(self.obj.add("3"), 3)
 
-    def test_number_is_two_digit(self):
+    def test_string_has_two_numbers(self):
         self.assertEqual(self.obj.add("1,2"), 3)
         self.assertEqual(self.obj.add("13,7"), 20)
 
-    def test_number_is_unknown_digit_number(self):
+    def test_string_has_unknown_numbers(self):
         self.assertEqual(self.obj.add("1,2,3"), 6)
 
     def test_number_has_alphabets(self):
         self.assertEqual(self.obj.add("1,2,a,c"), 7)
         self.assertEqual(self.obj.add("z,1,26,a"), 54)
 
-    def test_number_has_negative_digit(self):
+    def test_string_has_negative_number(self):
         self.assertRaises(ValueError, self.obj.add, "-1")
         self.assertRaises(ValueError, self.obj.add, "-21")
 
-    def test_number_has_multiple_negative_digits(self):
+    def test_string_has_mulitple_negative_number(self):
         self.assertRaises(ValueError, self.obj.add, "-1,-2,-3")
 
     def test_number_is_bigger_than_thousand(self):
