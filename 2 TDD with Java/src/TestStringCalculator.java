@@ -43,4 +43,9 @@ public class TestStringCalculator {
         Exception e = assertThrows(Exception.class, () -> StringCalculator.add("-1,3,-4,-2"));
         assertEquals("Negative not allowed:-1,-4,-2,", e.getMessage());
     }
+
+    @Test
+    public void testStringNumberIsBiggerThanThousand() {
+        assertEquals(5, StringCalculator.add("1,2001,3,1001,1"));
+    }
 }

@@ -19,10 +19,12 @@ public class StringCalculator {
                     sum += (characer - 96);
                 } else {
                     if (Integer.parseInt(number) < 0) {
-                        // return 10;
                         negativeValues += (number + ",");
+                    } else {
+                        if (!(Integer.parseInt(number) > 1000)) {
+                            sum += Integer.parseInt(number);
+                        }
                     }
-                    sum += Integer.parseInt(number);
                 }
             }
             if (negativeValues.length() != 0) {
