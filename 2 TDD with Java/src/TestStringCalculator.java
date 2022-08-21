@@ -19,4 +19,9 @@ public class TestStringCalculator {
     public void testStringHasTwoNumber() {
         assertEquals(3, StringCalculator.add("1,2"));
     }
+
+    @Test
+    public void testStringHasUnknownNumbers() {
+        assertEquals(6, StringCalculator.add("1,2,3"));
+    }
 }
