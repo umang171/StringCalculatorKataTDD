@@ -3,6 +3,15 @@ package src;
 public class StringCalculator {
     public static int add(String numbers) {
         String negativeValues = "";
+        if (numbers.startsWith("0//")) {
+            numbers = numbers.substring(3);
+            String[] numberList = numbers.split(",");
+            int sum = 0;
+            for (int i = 0; i < numberList.length; i += 2) {
+                sum += Integer.parseInt(numberList[i]);
+            }
+            return sum;
+        }
         if (numbers.startsWith("//")) {
             int beginIndexOfParameter = numbers.indexOf("//");
             int endIndexOfParameter = numbers.indexOf("\n");

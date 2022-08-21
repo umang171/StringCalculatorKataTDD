@@ -58,4 +58,10 @@ public class TestStringCalculator {
     public void testNumberWithDifferentDelimiter() {
         assertEquals(6, StringCalculator.add("//;\n1;2;3"));
     }
+
+    @Test
+    public void testNumberWithOddIndicesSum() {
+        assertEquals(4, StringCalculator.add("0//1,2,3"));
+        assertEquals(7, StringCalculator.add("0//4,2,3"));
+    }
 }
